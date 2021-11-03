@@ -96,9 +96,9 @@ app.post(
 	"/cars", 
 
 	//validation:
-	check("plate").isLength({min: 6, max: 10}).withMessage("'plate' field must be 6-10 characters long!"),
-	check("passengers").isNumeric({min: 0, max: 99}).withMessage("'pasangers' field amout must be from 0 to 99 persons!"),
-	check("weight").isDecimal({min: 0.01, max: 99.99}).withMessage("'weight' field amout must be from 0.01 to 99.99 tons!"),
+	check("plate").isLength({min: 2, max: 10}).withMessage("'plate' field must be 2-10 characters long!"),
+	check("passengers").isFloat({min: 0, max: 99}).withMessage("'pasangers' field amout must be from 0 to 99 persons!"),
+	check("weight").isFloat({min: 0.01, max: 99.99}).withMessage("'weight' field amout must be from 0.01 to 99.99 tons!"),
 	check("priority").custom(value => (value == 1 || value == 0) ? true : false).withMessage("when car registration is priority field value = 1, when car registration isn't priority field value = 0!"),
 
 	(req, res) => {
@@ -137,9 +137,9 @@ app.put(
 	"/cars/:id",
 	
 	//validation:
-	check("plate").isLength({min: 6, max: 10}).withMessage("'plate' field must be 6-10 characters long!"),
-	check("passengers").isNumeric({min: 0, max: 99}).withMessage("'pasangers' field amout must be from 0 to 99 persons!"),
-	check("weight").isDecimal({min: 0.01, max: 99.99}).withMessage("'weight' field amout must be from 0.01 to 99.99 tons!"),
+	check("plate").isLength({min: 2, max: 10}).withMessage("'plate' field must be 2-10 characters long!"),
+	check("passengers").isFloat({min: 0, max: 99}).withMessage("'pasangers' field amout must be from 0 to 99 persons!"),
+	check("weight").isFloat({min: 0.01, max: 99.99}).withMessage("'weight' field amout must be from 0.01 to 99.99 tons!"),
 	check("priority").custom(value => (value == 1 || value == 0) ? true : false).withMessage("when car registration is priority field value = 1, when car registration isn't priority field value = 0!"),
 		
 	(req, res) => {
